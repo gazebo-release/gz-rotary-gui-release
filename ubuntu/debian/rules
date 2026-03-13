@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+
+%:
+dh $@
+
+override_dh_auto_configure:
+dh_auto_configure -- \
+    -DCMAKE_BUILD_TYPE=RelWithDebInfo
+
+override_dh_auto_test:
+true
+
+# Execute doc creation to export at least the doxygen tag file
+override_dh_auto_build:
+dh_auto_build -- doc
+dh_auto_build
+
+override_dh_install:
+install -d debian/tmp/usr/share/gz/gz-gui/
+install ./obj-*/*.tag.xml debian/tmp/usr/share/gz/gz-gui/
+dh_install --
+
+# No way of using xfvb to run tests consistently
+#xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" \
+#dh_auto_test --no-parallel -- \
+#ARGS='-E UNIT_Application_TEST\|UNIT_Helpers_TEST\|INTEGRATION_ExamplesBuild_TEST\|UNIT_ign_TEST\|INTEGRATION_camera_tracking\|INTEGRATION_minimal_scene\|INTEGRATION_transport_scene_manager\INTEGRATION_marker_manager\INTEGRATION_scene3d'

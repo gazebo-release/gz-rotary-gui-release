@@ -1,0 +1,118 @@
+Source: gz-gui
+Maintainer: Jose Luis Rivero <jrivero@osrfoundation.org>
+Section: science
+Priority: optional
+Build-Depends: cmake,
+               debhelper (>= 11),
+               doxygen,
+               libgz-cmake-dev,
+               libgz-common-events-dev,
+               libgz-common-profiler-dev,
+               libgz-math-dev,
+               libgz-msgs-dev,
+               libgz-plugin-dev,
+               libgz-rendering-ogre1-dev,
+               libgz-tools-dev,
+               libgz-transport-dev,
+               libgz-utils-dev,
+               libprotobuf-dev,
+               libprotoc-dev,
+               libtinyxml2-dev,
+               pkg-config,
+               qml6-module-qt-labs-folderlistmodel,
+               qml6-module-qt-labs-platform,
+               qml6-module-qt-labs-settings,
+               qml6-module-qtcharts,
+               qml6-module-qtpositioning,
+               qml6-module-qtqml-models,
+               qml6-module-qtquick-controls,
+               qml6-module-qtquick-dialogs,
+               qml6-module-qtquick-layouts,
+               qml6-module-qtquick-templates,
+               qml6-module-qtquick-window,
+               qml6-module-qtquick,
+               qml6-module-qtcore,
+               qml6-module-qtqml-workerscript,
+               qml6-module-qt5compat-graphicaleffects,
+               libqt6svg6,
+               qt6-5compat-dev,
+               qt6-base-dev,
+               qt6-base-private-dev,
+               qt6-declarative-dev,
+               qt6-declarative-private-dev
+Vcs-Browser: https://github.com/gazebosim/gz-gui
+Vcs-Git: https://github.com/gazebo-release/gz-rotary-gui-release
+Standards-Version: 4.5.1
+Homepage: http://gazebosim.org/
+
+Package: libgz-gui
+Architecture: any
+Section: libs
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Provides: libgz-gui-generic
+Conflicts: libgz-gui-generic, libgz-gui6, libgz-gui8, libgz-gui9, libgz-gui10
+Replaces: libgz-gui6, libgz-gui8, libgz-gui9, libgz-gui10
+Multi-Arch: same
+Description: Gazebo Gui classes and functions for robot apps - Shared library
+ Gazebo Gui is a component in the Gazebo framework, a set of libraries
+ designed to rapidly develop robot applications.
+ .
+ Package contains the main libraries
+
+Package: libgz-gui-dev
+Architecture: any
+Section: libdevel
+Depends: libgz-cmake-dev,
+         libgz-common-events-dev,
+         libgz-common-profiler-dev,
+         libgz-gui (= ${binary:Version}),
+         libgz-math-dev,
+         libgz-msgs-dev,
+         libgz-plugin-dev,
+         libgz-rendering-ogre1-dev,
+         libgz-tools-dev,
+         libgz-transport-dev,
+         libgz-utils-dev,
+         libprotobuf-dev,
+         libprotoc-dev,
+         libtinyxml2-dev,
+         qml6-module-qt-labs-folderlistmodel,
+         qml6-module-qt-labs-platform,
+         qml6-module-qt-labs-settings,
+         qml6-module-qtcharts,
+         qml6-module-qtpositioning,
+         qml6-module-qtqml-models,
+         qml6-module-qtquick-controls,
+         qml6-module-qtquick-dialogs,
+         qml6-module-qtquick-layouts,
+         qml6-module-qtquick-templates,
+         qml6-module-qtquick-window,
+         qml6-module-qtquick,
+         qml6-module-qtcore,
+         qml6-module-qtqml-workerscript,
+         qml6-module-qt5compat-graphicaleffects,
+         libqt6svg6,
+         qt6-5compat-dev,
+         qt6-base-dev,
+         qt6-base-private-dev,
+         qt6-declarative-dev,
+         qt6-declarative-private-dev,
+         ${misc:Depends}
+Provides: libgz-gui-dev-generic
+Conflicts: libgz-gui-dev-generic, libgz-gui6-dev, libgz-gui8-dev, libgz-gui9-dev, libgz-gui10-dev
+Replaces: libgz-gui6-dev, libgz-gui8-dev, libgz-gui9-dev, libgz-gui10-dev
+Multi-Arch: same
+Description: Gazebo Gui classes and functions for robot apps - Development files
+ Gazebo Gui is a component in the Gazebo framework, a set of libraries
+ designed to rapidly develop robot applications.
+ .
+ Package for development libraries and headers.
+
+Package: gz-rotary-gui
+Depends: libgz-gui-dev (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: metapackages
+Description: alias package
+ Provides a package for Rotary without exposing the version number.

@@ -1,0 +1,5 @@
+usr/include/*
+usr/lib/*/*.so
+usr/lib/*/pkgconfig/*.pc
+usr/lib/*/cmake/*-gui*/*
+usr/share/gz/*-gui[0-99]*/*-gui*.tag.xml
