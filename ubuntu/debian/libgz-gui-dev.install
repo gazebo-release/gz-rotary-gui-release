@@ -2,3 +2,4 @@ usr/include/*
 usr/lib/*/*.so
 usr/lib/*/pkgconfig/*.pc
 usr/lib/*/cmake/*-gui*/*
+usr/share/gz/gz-gui/gz-gui.tag.xml
