@@ -109,7 +109,7 @@ Description: Gazebo Gui classes and functions for robot apps - Development files
  .
  Package for development libraries and headers.
 
-Package: gz-rotary-gui
+Package: libgz-rotary-gui-dev
 Depends: libgz-gui-dev (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
